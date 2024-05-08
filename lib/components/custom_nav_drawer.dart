@@ -55,6 +55,13 @@ class CustomNavigationDrawer extends StatelessWidget {
   Widget buildMenuItems(BuildContext context) => Wrap(
         children: [
           ListTile(
+            leading: const Icon(Icons.person_outlined),
+            title: const Text('Profile'),
+            onTap: () {
+              Navigator.pushNamed(context, '/account');
+            },
+          ),
+          ListTile(
             leading: const Icon(Icons.home_outlined),
             title: const Text('Home'),
             onTap: () {

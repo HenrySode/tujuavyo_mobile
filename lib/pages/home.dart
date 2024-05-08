@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tujuavyo/components/color.dart';
 import 'package:tujuavyo/components/custom_nav_drawer.dart';
-import 'package:tujuavyo/components/home_items.dart';
+import 'package:tujuavyo/pages/events_news.dart';
 
 // ignore: must_be_immutable
 class HomePage extends StatefulWidget {
@@ -12,23 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<HomeItems> homeItems = [
-    HomeItems(
-      itemTitle: 'Expert',
-      itemDesc: 'Meet the Expert you always want',
-      urlAvatar: 'assets/temp/image1.png',
-    ),
-    HomeItems(
-      itemTitle: 'Courses',
-      itemDesc: 'Choose the best course of your interest',
-      urlAvatar: 'assets/temp/image2.png',
-    ),
-    HomeItems(
-      itemTitle: 'Books',
-      itemDesc: 'Check book that will boost your knowledge',
-      urlAvatar: 'assets/temp/image3.png',
-    ),
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,22 +50,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: const CustomNavigationDrawer(),
-      body: ListView.builder(
-          itemCount: homeItems.length,
-          itemBuilder: (context, index) => Card(
-                child: ListTile(
-                  leading: const CircleAvatar(
-                    backgroundImage: AssetImage('assets/temp/image1.png'),
-                  ),
-                  title: const Text('Expert'),
-                  subtitle: const Text('Hello'),
-                  trailing: IconButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/expert');
-                      },
-                      icon: Icon(Icons.forward)),
-                ),
-              )),
+      body: const EventsNewsPage(),
     );
   }
 }

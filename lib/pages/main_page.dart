@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tujuavyo/components/color.dart';
-import 'package:tujuavyo/pages/account_page.dart';
 import 'package:tujuavyo/pages/chat_page.dart';
-import 'package:tujuavyo/pages/events_news.dart';
 import 'package:tujuavyo/pages/home.dart';
+import 'package:tujuavyo/pages/home_pages/courses_page.dart';
+import 'package:tujuavyo/pages/home_pages/expert_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -16,9 +16,9 @@ class _MainPageState extends State<MainPage> {
   int index = 0;
   final pages = [
     HomePage(),
-    const EventsNewsPage(),
+    ExpertPage(),
     const ChatPage(),
-    const AccountPage(),
+    const CoursesPage(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -51,12 +51,12 @@ class _MainPageState extends State<MainPage> {
               label: 'Home',
             ),
             NavigationDestination(
-              icon: Icon(Icons.event),
+              icon: Icon(Icons.work),
               selectedIcon: Icon(
-                Icons.event,
+                Icons.work,
                 color: AppColors.primaryColor,
               ),
-              label: 'Events',
+              label: 'Expert',
             ),
             NavigationDestination(
               icon: Icon(Icons.chat),
@@ -67,12 +67,12 @@ class _MainPageState extends State<MainPage> {
               label: 'WeChat',
             ),
             NavigationDestination(
-              icon: Icon(Icons.person),
+              icon: Icon(Icons.school),
               selectedIcon: Icon(
-                Icons.person,
+                Icons.school,
                 color: AppColors.primaryColor,
               ),
-              label: 'Account',
+              label: 'Courses',
             ),
           ],
         ),

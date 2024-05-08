@@ -13,53 +13,56 @@ class ExpertPage extends StatelessWidget {
     height = MediaQuery.of(context).size.height;
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          backgroundColor: AppColors.primaryColor,
-          elevation: 2,
-          title: const Text(
-            'Serach for expert',
-            style: TextStyle(
-                color: AppColors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w700),
-          ),
-        ),
         body: SingleChildScrollView(
-          child: Container(
-            color: Colors.indigo,
-            child: Column(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(),
-                  height: height * 0.25,
-                  width: width,
-                  child: const Column(
-                    children: [
-                      Row(
-                        children: [
-                          // InkWell(
-                          //   onTap: () {},
-                          // )
-                        ],
-                      )
-                    ],
-                  ),
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: AppColors.background,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
+      physics: const NeverScrollableScrollPhysics(),
+      child: Container(
+        color: AppColors.primaryColor,
+        height: height,
+        width: width,
+        child: Column(
+          children: [
+            Container(
+              decoration: const BoxDecoration(),
+              height: height * 0.25,
+              width: width,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      top: 35,
+                      left: 15,
+                      right: 15,
                     ),
-                  ),
-                  height: height * 0.70,
-                  width: width,
-                )
-              ],
+                    child: Row(
+                      children: [
+                        InkWell(
+                          onTap: () {},
+                          child: const Icon(
+                            Icons.sort,
+                            color: Colors.white,
+                            size: 40,
+                          ),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-        ));
+            Container(
+              decoration: const BoxDecoration(
+                color: AppColors.background,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+              ),
+              height: height * 0.70,
+              width: width,
+            )
+          ],
+        ),
+      ),
+    ));
   }
 }
