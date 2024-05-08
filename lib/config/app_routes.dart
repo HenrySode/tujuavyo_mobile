@@ -1,3 +1,4 @@
+import 'package:tujuavyo/components/custom_nav_drawer.dart';
 import 'package:tujuavyo/pages/account_page.dart';
 import 'package:tujuavyo/pages/chat_page.dart';
 import 'package:tujuavyo/pages/events_news.dart';
@@ -23,6 +24,7 @@ class AppRoutes {
     '/expert': (context) => ExpertPage(),
     '/books': (context) => const BooksPage(),
     '/courses': (context) => const CoursesPage(),
+    '/nav': (context) => const CustomNavigationDrawer(),
   };
 
   static const onboarding = '/';
@@ -36,4 +38,5 @@ class AppRoutes {
   static const expert = '/expert';
   static const books = '/books';
   static const courses = '/courses';
+  static const nav = '/nav';
 }

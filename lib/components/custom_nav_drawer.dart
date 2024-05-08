@@ -65,7 +65,7 @@ class CustomNavigationDrawer extends StatelessWidget {
             leading: const Icon(Icons.home_outlined),
             title: const Text('Home'),
             onTap: () {
-              Navigator.pushNamed(context, '/home');
+              Navigator.pushNamed(context, '/main');
             },
           ),
           ListTile(
